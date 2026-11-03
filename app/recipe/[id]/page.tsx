@@ -12,6 +12,8 @@ export function generateStaticParams() {
   return recipes.map((recipe) => ({ id: recipe.id }));
 }
 
+export const dynamicParams = false;
+
 export default function RecipePage({ params }: RecipePageProps) {
   const recipe = getRecipe(params.id);
 
