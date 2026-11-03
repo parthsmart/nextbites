@@ -1,4 +1,4 @@
-import { RecipeCard } from "./components/RecipeCard";
+import { RecipeGrid } from "./components/RecipeGrid";
 import { recipes } from "./data/recipes";
 
 export default function Home() {
@@ -35,16 +35,7 @@ export default function Home() {
           </div>
           <a className="text-link" href="#recipes">View all recipes <span>↗</span></a>
         </div>
-        <div className="filter-row">
-          {["All recipes", "Quick & easy", "Healthy", "Comfort food"].map((filter, index) => (
-            <button className={`filter-pill ${index === 0 ? "filter-pill--active" : ""}`} key={filter} type="button">
-              {filter}
-            </button>
-          ))}
-        </div>
-        <div className="recipe-grid">
-          {recipes.map((recipe, index) => <RecipeCard key={recipe.id} recipe={recipe} featured={index === 0} />)}
-        </div>
+        <RecipeGrid recipes={recipes} />
       </section>
     </main>
   );
